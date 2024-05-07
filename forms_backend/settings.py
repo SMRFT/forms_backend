@@ -27,11 +27,27 @@ DEBUG = True
 
 # ALLOWED_HOSTS = []
 
-ALLOWED_HOSTS = ['*']
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',  # Add your frontend URL here
+
+ALLOWED_HOSTS = [
+    'shanmugaindicators.netlify.app',
+    '127.0.0.1',
+    'localhost',
+    'smrft.s3-website.us-east-2.amazonaws.com',
+    '127.0.0.1:8000',
+    "15.207.192.151", '.vercel.app', '.now.sh'
 ]
 
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOWED_ORIGINS = [
+    'https://shanmugaindicators.netlify.app/',
+    'http://localhost:3000',  # Use https://localhost:3000 if possible
+    'http://smrft.s3-website.us-east-2.amazonaws.com',
+    'https://127.0.0.1:8000'  # Use https://127.0.0.1:7000 if possible
+]
 # Optional: Allow credentials (cookies, authorization headers, etc.) to be included in cross-origin requests
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_ALL_ORIGINS = True  # Allow requests from all origins
