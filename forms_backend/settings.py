@@ -44,7 +44,7 @@ if RENDER_EXTERNAL_HOSTNAME:
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    'https://shanmugaindicators.netlify.app/',
+    'https://shanmugaindicators.netlify.app',
     'http://localhost:3000',  # Use https://localhost:3000 if possible
     'http://smrft.s3-website.us-east-2.amazonaws.com',
     'https://127.0.0.1:8000'  # Use https://127.0.0.1:7000 if possible
